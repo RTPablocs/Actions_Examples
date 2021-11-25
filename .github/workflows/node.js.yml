@@ -23,7 +23,7 @@ jobs:
     steps:
     - name: Superlinter Execution
     - uses: github/super-linter@v3
-    - name: Jest tests
+    - name: Jest execution
       uses: actions/checkout@v2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
