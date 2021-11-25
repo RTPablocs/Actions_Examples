@@ -23,7 +23,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Superlinter Execution
-      uses: github/super-linter@v3
+    - uses: github/super-linter@v3
+    - name: Jest tests
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        node-version: ${{ matrix.node-version }}
+    - run: npm install jest
+    - run: npm test 
