@@ -21,10 +21,10 @@ jobs:
       VALIDATE_JAVASCRIPT_ES: true
 
     steps:
-    - uses: actions/checkout@v2
     - name: Superlinter Execution
     - uses: github/super-linter@v3
     - name: Jest tests
+    - uses: actions/checkout@v2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
     - run: npm install jest
