@@ -27,6 +27,4 @@ jobs:
         VALIDATE_JAVASCRIPT_ES: true
 
     - name: Jest execution
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-      run: npm install jest && npm test 
+      run: npm install jest && npm test
