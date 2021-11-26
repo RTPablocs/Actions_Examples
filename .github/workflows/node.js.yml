@@ -18,6 +18,7 @@ jobs:
     - name: Get Code
       uses: actions/checkout@v2
     - name: Superlinter Execution
+      run: npm install jest
       uses: github/super-linter@v3
       env:
         DEFAULT_BRANCH: main
@@ -27,4 +28,4 @@ jobs:
         VALIDATE_JAVASCRIPT_ES: true
 
     - name: Jest execution
-      run: npm install jest && npm test
+      run: npm test
