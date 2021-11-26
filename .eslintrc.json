@@ -4,8 +4,10 @@
       "semi": [2, "always"],
       "quotes": ["error", "single"]
     },
-    "plugins": ["jest"]
-    
+    "plugins": ["jest"],
+    "env": {
+    "jest/globals": true
+    }
   }
   
   
