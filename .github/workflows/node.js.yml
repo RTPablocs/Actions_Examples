@@ -6,8 +6,6 @@ name: Superlinter Action
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   lint:
@@ -21,7 +19,7 @@ jobs:
       run: npm install jest
       uses: github/super-linter@v3
       env:
-        DEFAULT_BRANCH: main
+        DEFAULT_BRANCH: master
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LINTER_RULES_PATH: /
         JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
