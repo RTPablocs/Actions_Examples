@@ -23,6 +23,8 @@ jobs:
         LINTER_RULES_PATH: /
         JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
         VALIDATE_JAVASCRIPT_ES: true
-
+  test:
+    runs-on: ubuntu-latest
+    steps: 
     - name: Jest execution
       run: npm install jest && npm test
