@@ -26,7 +26,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps: 
+<<<<<<< HEAD
     - name: Get Code
       uses: actions/checkout@v2
+=======
+>>>>>>> be1543aba04cf8f9d5d76ea76ce436dada4fd35c
     - name: Jest execution
       run: npm install jest && npm test
