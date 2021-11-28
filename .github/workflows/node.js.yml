@@ -5,7 +5,7 @@ name: Superlinter Action
 
 on:
   push:
-    branches: [ "node_environment_job" ]
+    branches: [ "nodejs_environment_job" ]
 
 jobs:
   lint:
