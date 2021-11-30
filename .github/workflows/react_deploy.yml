@@ -32,11 +32,9 @@ jobs:
         with:
           name: react-deploy
       - name: Publish to Surge
-        uses: dswistowski/surge-sh-action@v1
+        uses: ./.github/actions
         with:
           domain: 'rtpablocs.surge.sh'
-          project: '.'
-          login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
 
 
