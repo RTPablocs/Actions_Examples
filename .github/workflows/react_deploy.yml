@@ -1,0 +1,38 @@
+name: "Surge Deploy Workflow"
+
+on:
+  push:
+    branches: [react-deploy]
+
+jobs: 
+  
+  build:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v2
+      - name: Build
+        run: npm install && npm run build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+    
+  deploy: 
+
+    runs-on: ubuntu-latest
+      
+    steps:
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+      - name: Publish to Surge
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'foo-bar.surge.sh'
+          project: '.'
+          login: ${{ secrets.surge_login }}
+          token: ${{ secrets.surge_token }}
+
+
+      
