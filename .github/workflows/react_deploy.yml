@@ -32,12 +32,6 @@ jobs:
         with:
           name: react-deploy
       - name: Publish to Surge
-        uses: dswistowski/surge-sh-action@v1
-        with:
-          domain: 'rtpablocs.surge.sh'
-          project: './build'
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
-
+        run: npm install -g surge && surge ./build https://rtpablocs.surge.sh/ --token ${{secrets.TOKEN}}
 
       
